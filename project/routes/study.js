@@ -4,8 +4,8 @@ const studyController = require('../controllers/studyController');
 
 // GET
   router.get(`/`, studyController.findPerson);
-  router.post(``, studyController.findPerson);
-  
+  router.post(`/`, studyController.findPerson);
+
 // POST
 
 

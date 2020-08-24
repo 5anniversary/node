@@ -4,7 +4,7 @@ module.exports = {
     get: async ( req, res ) => {
         const {
             id
-        } = req.query;
+        } = req.params.id;
 
         const person = await StudyModel.studyPerson(id);
         
