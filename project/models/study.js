@@ -4,7 +4,6 @@ const table = 'study';
 const study = {
     studyPerson: async (id) => {
         const query = `SELECT name, part FROM ${table} WHERE id = ${id}`;
-        console.log(query)
         try {
             const result = await pool.queryParamArr(query);
             console.log(result)
