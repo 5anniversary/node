@@ -2,9 +2,7 @@ const StudyModel = require('../models/study');
 
 module.exports = {
     get: async ( req, res ) => {
-        const {
-            id
-        } = req.query;
+        const id = req.params.id;
 
         const person = await StudyModel.studyPerson(id);
         
