@@ -8,5 +8,4 @@ const studyController = require('../controllers/studyController');
 // POST
   router.post(`/`, studyController.post);
 
-
 module.exports = router;

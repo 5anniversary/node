@@ -1,7 +1,11 @@
 const week = (day) => {
     console.log(day)
     return new Promise ((resolved, rejected) => {
-        resolved(`일주일이 시작되었어요`)
+        if (day == "1st"){
+            resolved(`일주일이 시작되었어요`)
+        } else {
+            rejected(`123`)
+        }
     })
 }
 
@@ -51,9 +55,8 @@ const sunday = (param) => {
 
 
 async function asyncMain(){
-    let result = await week('1st')
+    let result = await week('1s').catch(console.error)
     console.log(result)
-
     result = await monday("월요일이에요")
     console.log(result)
 

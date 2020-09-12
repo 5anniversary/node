@@ -1,15 +1,20 @@
 const week = (day) => {
     console.log(day)
     return new Promise ((resolved, rejected) => {
-        resolved(`일주일이 시작되었어요`)
+
+        if (day == "월요일"){
+            resolved(`일주일이 시작되었어요`)
+        }else {
+            rejected(`일주일`)
+        }
     })
 }
 
 const monday = (param) => {
     return new Promise ((resolve, rejected) => {
         console.log(param)
-        resolve('월요일이에요')
-        // rejected(new Error(`월요일에 아무것도 못했어요,,,`))
+        // resolve('월요일이에요')
+        rejected(new Error(`월요일에 아무것도 못했어요,,,`))
     })
 }
 
@@ -57,20 +62,14 @@ const sunday = (param) => {
 let promise = week('1st')
 
 promise
+    .catch(console.log)
     .then(monday)
-    .then(console.log)
+    .catch(console.error)
     .then(tuesday)
-    .then(console.log)
     .then(wednesday)
-    .then(console.log)
     .then(thursday)
-    .then(console.log)
     .then(friday)
-    .then(console.log)
     .then(saturday)
-    .then(console.log)
     .then(sunday)
     .catch(console.error)
-    .then(sunday)
-
     
